@@ -1,5 +1,8 @@
 # [level 2] 삼각 달팽이 - 68645 
 
+- O(n^2) 구현
+- 방향 전환이 순서대로 일어나고 그 전까지는 계속 같은 방향 전환이라는 걸 생각해내야함
+
 [문제 링크](https://school.programmers.co.kr/learn/courses/30/lessons/68645#qna) 
 
 ### 성능 요약
