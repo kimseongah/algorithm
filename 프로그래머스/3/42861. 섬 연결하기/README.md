@@ -2,6 +2,10 @@
 
 [문제 링크](https://school.programmers.co.kr/learn/courses/30/lessons/42861) 
 
+- 처음에 모든 섬을 시작으로 잡고 다익스트라를 해야하나 했는데 그러면 각 노드로의 최소 경로만 구하는 거고 그게 모든 노드를 잇는 건 아님
+- Kruskal 알고리즘에서 rank를 고려하지 않은 방법
+- union시에 그냥 parent끼리만 연결해버림
+
 ### 성능 요약
 
 메모리: 10.2 MB, 시간: 0.05 ms
