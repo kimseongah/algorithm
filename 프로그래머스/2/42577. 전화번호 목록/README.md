@@ -1,6 +1,11 @@
 # [level 2] 전화번호 목록 - 42577 
 
-[문제 링크](https://school.programmers.co.kr/learn/courses/30/lessons/42577#qna) 
+[문제 링크](https://school.programmers.co.kr/learn/courses/30/lessons/42577)
+
+- 비교하는 효율성 문제
+- 정렬은 𝑂(NlogN)
+- 전화번호의 길이 제한이 있어서 상수
+- hash set의  평균 시간복잡도가 𝑂(1)
 
 ### 성능 요약
 
