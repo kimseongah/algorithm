@@ -2,6 +2,9 @@
 
 [문제 링크](https://school.programmers.co.kr/learn/courses/30/lessons/43105) 
 
+- index-1 또는 index가 부모 노드이니까 그 중에 최대인 걸 이용함
+- O(n^2)
+
 ### 성능 요약
 
 메모리: 14.7 MB, 시간: 46.42 ms
