@@ -1,36 +1,35 @@
-import heapq
-INF = 1000001
+from heapq import heappush, heappop
+INF = 1e8
 
-def dijkstra(start):
-    q = []
-    distance[start] = 0
-    heapq.heappush(q,[start,0])
-
-    while q:
-        now, dist = heapq.heappop(q)
-        if distance[now] < dist:
-            continue
-        for n,c in graph[now]:
-            cost = c + dist
-            if cost < distance[n]:
-                distance[n] = cost
-                heapq.heappush(q,[n,cost])
-    return distance
-def solution(n, s, a, b, fares):
-    answer = 0
-    global graph, distance
-    graph = [[] for _ in range(n+1)]
-    distance = [INF] * (n+1)
-    min = 10**9
-    for f in fares:
-        graph[f[0]].append([f[1],f[2]])
-        graph[f[1]].append([f[0],f[2]])
-    d1 = dijkstra(s)
-    for i in range(1,n+1):
+def dijkstra(start, n):
+        heap = []
         distance = [INF] * (n+1)
-        d2 = dijkstra(i)
-        if min > d2[a] + d2[b] + d1[i]:
-            min = d2[a] + d2[b] + d1[i]
-            # print(d2[a],d2[b],d1[i],i)
+        distance[start] = 0
+        heappush(heap, [0, start])
+        while heap:
+            dist, node = heappop(heap)
+            if distance[node] < dist:
+                continue
+            for no, c in links[node]:
+                cost = c+dist
+                if cost < distance[no]:
+                    distance[no] = cost
+                    heappush(heap, [cost, no])
+        return distance
 
-    return min
+def solution(n, s, a, b, fares):
+    answer = INF
+    global links
+    links = [[] for _ in range(n+1)]
+    for start, end, fare in fares:
+        links[start].append([end, fare])
+        links[end].append([start, fare])
+    distance_from_s = dijkstra(s, n)
+    distance_from_a = dijkstra(a, n)
+    distance_from_b = dijkstra(b, n)
+
+    for i in range(1, n+1):
+        cost = distance_from_s[i]+distance_from_a[i]+distance_from_b[i]
+        if answer>cost:
+            answer = cost
+    return answer
