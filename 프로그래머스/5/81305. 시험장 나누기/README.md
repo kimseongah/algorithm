@@ -1,6 +1,13 @@
 # [level 5] 시험장 나누기 - 81305 
 
-[문제 링크](https://school.programmers.co.kr/learn/courses/30/lessons/81305#fnref1) 
+[문제 링크](https://school.programmers.co.kr/learn/courses/30/lessons/81305) 
+
+- 처음 lo값이 hi // k일 때 정확성 8, 9번 실패 -> 반례 못 찾겠음
+- 효율성 2,4,6,9번 stack 크기를 늘려주니까 통과
+```
+import sys
+sys.setrecursionlimit(10 ** 6)
+```
 
 ### 성능 요약
 
